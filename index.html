@@ -35,17 +35,7 @@
     .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
 
     /* ── Logo ───────────────────────────────── */
-    .logo { display: inline-flex; align-items: center; gap: 10px; }
-    .logo-mark {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--blue); display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-    }
-    .logo-mark svg { width: 26px; height: 26px; }
-    .logo-text {
-      font-size: 28px; font-weight: 800; color: var(--blue);
-      letter-spacing: 0.5px;
-    }
+    .logo img { height: 48px; width: auto; display: block; }
 
     /* ── Hero ───────────────────────────────── */
     header { padding: 28px 0; }
@@ -134,12 +124,7 @@
   <header>
     <div class="wrap">
       <div class="logo">
-        <span class="logo-mark">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4 12.5L9.5 18L20 6.5" stroke="#FFF000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </span>
-        <span class="logo-text">merkio</span>
+        <img src="logo-merkio.png" alt="merkio" />
       </div>
     </div>
   </header>
@@ -179,7 +164,7 @@
           <div class="feature">
             <div class="ico">🍝</div>
             <h3>Rezept-Import</h3>
-            <p>Rezept einfügen – die Zutaten landen automatisch auf der Einkaufsliste.</p>
+            <p>Rezept einfügen oder nur das gewünschte Gericht angeben – die Zutaten landen automatisch auf der Einkaufsliste.</p>
           </div>
           <div class="feature">
             <div class="ico">🏪</div>
