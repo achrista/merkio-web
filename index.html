@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>merkio – Gemeinsame Einkaufs- & To-do-Listen</title>
+  <meta name="description" content="merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Kostenlose Android-App." />
+  <meta name="theme-color" content="#0050AA" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="merkio – Gemeinsame Listen für alle" />
+  <meta property="og:description" content="Einkaufs- und To-do-Listen in Echtzeit teilen. Kostenlose Android-App." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://merkio.de" />
+
+  <style>
+    :root {
+      --blue: #0050AA;
+      --blue-dark: #003c80;
+      --yellow: #FFF000;
+      --ink: #1a1c20;
+      --muted: #5b6470;
+      --bg: #f5f7fa;
+      --card: #ffffff;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+    /* ── Logo ───────────────────────────────── */
+    .logo { display: inline-flex; align-items: center; gap: 10px; }
+    .logo-mark {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--blue); display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .logo-mark svg { width: 26px; height: 26px; }
+    .logo-text {
+      font-size: 28px; font-weight: 800; color: var(--blue);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Hero ───────────────────────────────── */
+    header { padding: 28px 0; }
+    .hero {
+      text-align: center;
+      padding: 40px 0 64px;
+      background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%);
+    }
+    .hero h1 {
+      font-size: clamp(30px, 6vw, 46px);
+      font-weight: 800; line-height: 1.15; margin: 28px 0 16px;
+    }
+    .hero h1 .accent { color: var(--blue); }
+    .hero p.lead {
+      font-size: clamp(17px, 2.5vw, 20px); color: var(--muted);
+      max-width: 540px; margin: 0 auto 36px;
+    }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: #fff; text-decoration: none;
+      font-weight: 700; font-size: 18px;
+      padding: 16px 30px; border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0,80,170,0.28);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    .btn:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,80,170,0.35); }
+    .btn svg { width: 22px; height: 22px; }
+    .btn-note { display: block; margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+    /* ── Sections ───────────────────────────── */
+    section.block { padding: 56px 0; }
+    section.block h2 {
+      font-size: clamp(22px, 4vw, 30px); font-weight: 800;
+      text-align: center; margin-bottom: 40px;
+    }
+
+    /* Features */
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 20px; }
+    .feature {
+      background: var(--card); border-radius: 16px; padding: 26px;
+      box-shadow: 0 2px 12px rgba(20,28,40,0.06);
+    }
+    .feature .ico {
+      width: 46px; height: 46px; border-radius: 12px; background: #eaf2fc;
+      display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+      font-size: 24px;
+    }
+    .feature h3 { font-size: 18px; margin-bottom: 6px; }
+    .feature p { color: var(--muted); font-size: 15px; }
+
+    /* Install steps */
+    .steps { counter-reset: step; max-width: 620px; margin: 0 auto; }
+    .step {
+      display: flex; gap: 18px; align-items: flex-start;
+      background: var(--card); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px;
+      box-shadow: 0 2px 12px rgba(20,28,40,0.06);
+    }
+    .step::before {
+      counter-increment: step; content: counter(step);
+      flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
+      background: var(--blue); color: #fff; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .step h3 { font-size: 17px; margin-bottom: 2px; }
+    .step p { color: var(--muted); font-size: 15px; }
+    .step code { background: #eef1f5; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+
+    .hint {
+      max-width: 620px; margin: 24px auto 0; padding: 16px 18px;
+      background: #fffbe6; border: 1px solid #ffe27a; border-radius: 12px;
+      font-size: 14px; color: #6b5800;
+    }
+
+    /* ── Footer ─────────────────────────────── */
+    footer {
+      text-align: center; padding: 40px 0; color: var(--muted); font-size: 14px;
+      border-top: 1px solid #e4e8ee;
+    }
+    footer a { color: var(--blue); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="logo">
+        <span class="logo-mark">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 12.5L9.5 18L20 6.5" stroke="#FFF000" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="logo-text">merkio</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <h1>Gemeinsame Listen,<br><span class="accent">in Echtzeit geteilt</span></h1>
+        <p class="lead">
+          Einkaufs- und To-do-Listen für Familie, WG und Gruppen.
+          Jede Änderung erscheint sofort bei allen – ganz ohne Chaos.
+        </p>
+        <a class="btn" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          App herunterladen (Android)
+        </a>
+        <span class="btn-note">Kostenlos · Android 7.0 oder neuer · APK-Direktdownload</span>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <h2>Was merkio kann</h2>
+        <div class="features">
+          <div class="feature">
+            <div class="ico">⚡</div>
+            <h3>Echtzeit-Sync</h3>
+            <p>Hakt jemand einen Artikel ab, sehen es alle sofort – ohne Aktualisieren.</p>
+          </div>
+          <div class="feature">
+            <div class="ico">👨‍👩‍👧</div>
+            <h3>Gruppen</h3>
+            <p>Lade Familie oder Mitbewohner per Einladungscode oder Link ein.</p>
+          </div>
+          <div class="feature">
+            <div class="ico">🍝</div>
+            <h3>Rezept-Import</h3>
+            <p>Rezept einfügen – die Zutaten landen automatisch auf der Einkaufsliste.</p>
+          </div>
+          <div class="feature">
+            <div class="ico">🏪</div>
+            <h3>Nach Markt sortiert</h3>
+            <p>Ordne Artikel Geschäften zu und kaufe in der passenden Reihenfolge.</p>
+          </div>
+          <div class="feature">
+            <div class="ico">✅</div>
+            <h3>To-do-Listen</h3>
+            <p>Nicht nur Einkäufe – auch Aufgaben mit Fälligkeit und Zuständigkeit.</p>
+          </div>
+          <div class="feature">
+            <div class="ico">🔔</div>
+            <h3>Benachrichtigungen</h3>
+            <p>Push-Hinweise, wenn sich auf deinen Listen etwas tut.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="install" style="background:#fff;">
+      <div class="wrap">
+        <h2>So installierst du merkio</h2>
+        <div class="steps">
+          <div class="step">
+            <div>
+              <h3>APK herunterladen</h3>
+              <p>Tippe oben auf „App herunterladen“. Die Datei <code>merkio.apk</code> wird gespeichert.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Installation aus unbekannter Quelle erlauben</h3>
+              <p>Android fragt beim Öffnen der APK nach. Erlaube die Installation für deinen Browser bzw. die Dateien-App.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div>
+              <h3>Öffnen und loslegen</h3>
+              <p>Konto anlegen, Gruppe erstellen oder beitreten – fertig.</p>
+            </div>
+          </div>
+        </div>
+        <div class="hint">
+          <strong>Hinweis:</strong> merkio wird als Direkt-Download außerhalb des Play Stores angeboten.
+          Die App stammt direkt vom Entwickler. Bei Updates lädst du einfach die neue Version von dieser Seite.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© <span id="year"></span> merkio · Eine App von Arnulf Christa</p>
+      <p style="margin-top:6px;">
+        <a href="mailto:arnulf@christa-web.de">Kontakt</a>
+      </p>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
