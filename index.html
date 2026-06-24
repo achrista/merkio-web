@@ -4,12 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>merkio – Gemeinsame Einkaufs- & To-do-Listen</title>
-  <meta name="description" id="meta-desc" content="merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Kostenlose Android-App." />
+  <meta name="description" id="meta-desc" content="merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Als Web-App im Browser oder kostenlose Android-App." />
   <meta name="theme-color" content="#0050AA" />
 
   <!-- Open Graph / Social -->
   <meta property="og:title" content="merkio – Gemeinsame Listen für alle" />
-  <meta property="og:description" content="Einkaufs- und To-do-Listen in Echtzeit teilen. Kostenlose Android-App." />
+  <meta property="og:description" content="Einkaufs- und To-do-Listen in Echtzeit teilen. Als Web-App im Browser oder kostenlose Android-App." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://merkio.de" />
 
@@ -64,6 +64,7 @@
       max-width: 540px; margin: 0 auto 36px;
     }
 
+    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--blue); color: #fff; text-decoration: none;
@@ -74,7 +75,14 @@
     }
     .btn:hover { background: var(--blue-dark); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(0,80,170,0.35); }
     .btn svg { width: 22px; height: 22px; }
-    .btn-note { display: block; margin-top: 14px; font-size: 14px; color: var(--muted); }
+    .btn.secondary {
+      background: #fff; color: var(--blue);
+      border: 2px solid var(--blue);
+      box-shadow: 0 4px 16px rgba(20,28,40,0.08);
+    }
+    .btn.secondary:hover { background: #eaf2fc; }
+    .btn.sm { font-size: 15px; padding: 12px 22px; }
+    .btn-note { display: block; margin-top: 16px; font-size: 14px; color: var(--muted); }
 
     /* ── Sections ───────────────────────────── */
     section.block { padding: 56px 0; }
@@ -97,25 +105,39 @@
     .feature h3 { font-size: 18px; margin-bottom: 6px; }
     .feature p { color: var(--muted); font-size: 15px; }
 
-    /* Install steps */
-    .steps { counter-reset: step; max-width: 620px; margin: 0 auto; }
-    .step {
-      display: flex; gap: 18px; align-items: flex-start;
-      background: var(--card); border-radius: 14px; padding: 20px 22px; margin-bottom: 14px;
-      box-shadow: 0 2px 12px rgba(20,28,40,0.06);
+    /* Nutzungs-Optionen (Web-App / Android) */
+    .options {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 24px; max-width: 760px; margin: 0 auto;
     }
-    .step::before {
-      counter-increment: step; content: counter(step);
-      flex-shrink: 0; width: 34px; height: 34px; border-radius: 50%;
-      background: var(--blue); color: #fff; font-weight: 800;
+    .option {
+      background: var(--card); border-radius: 18px; padding: 28px;
+      box-shadow: 0 2px 12px rgba(20,28,40,0.06);
+      display: flex; flex-direction: column;
+    }
+    .option .ico {
+      width: 52px; height: 52px; border-radius: 14px; background: #eaf2fc;
+      display: flex; align-items: center; justify-content: center; font-size: 28px; margin-bottom: 16px;
+    }
+    .option h3 { font-size: 20px; margin-bottom: 6px; }
+    .option > p { color: var(--muted); font-size: 15px; margin-bottom: 18px; }
+    .ministeps { list-style: none; counter-reset: ms; margin: 0 0 22px; padding: 0; flex: 1; }
+    .ministeps li {
+      position: relative; padding-left: 32px; margin-bottom: 12px;
+      font-size: 14.5px; color: var(--ink);
+    }
+    .ministeps li::before {
+      counter-increment: ms; content: counter(ms);
+      position: absolute; left: 0; top: 1px;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--blue); color: #fff; font-size: 12px; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
     }
-    .step h3 { font-size: 17px; margin-bottom: 2px; }
-    .step p { color: var(--muted); font-size: 15px; }
-    .step code { background: #eef1f5; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+    .ministeps code, .step code { background: #eef1f5; padding: 1px 6px; border-radius: 5px; font-size: 13px; }
+    .option .btn { align-self: flex-start; }
 
     .hint {
-      max-width: 620px; margin: 24px auto 0; padding: 16px 18px;
+      max-width: 720px; margin: 28px auto 0; padding: 16px 18px;
       background: #fffbe6; border: 1px solid #ffe27a; border-radius: 12px;
       font-size: 14px; color: #6b5800;
     }
@@ -151,12 +173,21 @@
       <div class="wrap">
         <h1 data-i18n-html="hero_h1"></h1>
         <p class="lead" data-i18n="lead"></p>
-        <a class="btn" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk">
-          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-          <span data-i18n="btn_download"></span>
-        </a>
+        <div class="btn-row">
+          <a class="btn" href="https://app.merkio.de">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
+              <path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span data-i18n="btn_web"></span>
+          </a>
+          <a class="btn secondary" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span data-i18n="btn_android"></span>
+          </a>
+        </div>
         <span class="btn-note" data-i18n="btn_note"></span>
       </div>
     </section>
@@ -211,25 +242,31 @@
 
     <section class="block" id="install" style="background:#fff;">
       <div class="wrap">
-        <h2 data-i18n="install_title"></h2>
-        <div class="steps">
-          <div class="step">
-            <div>
-              <h3 data-i18n="step1_title"></h3>
-              <p data-i18n-html="step1_desc"></p>
-            </div>
+        <h2 data-i18n="usage_title"></h2>
+        <div class="options">
+          <!-- Web-App / PWA -->
+          <div class="option">
+            <div class="ico">🌐</div>
+            <h3 data-i18n="web_title"></h3>
+            <p data-i18n="web_desc"></p>
+            <ol class="ministeps">
+              <li data-i18n-html="web_s1"></li>
+              <li data-i18n="web_s2"></li>
+              <li data-i18n="web_s3"></li>
+            </ol>
+            <a class="btn sm" href="https://app.merkio.de" data-i18n="web_cta"></a>
           </div>
-          <div class="step">
-            <div>
-              <h3 data-i18n="step2_title"></h3>
-              <p data-i18n="step2_desc"></p>
-            </div>
-          </div>
-          <div class="step">
-            <div>
-              <h3 data-i18n="step3_title"></h3>
-              <p data-i18n="step3_desc"></p>
-            </div>
+          <!-- Android-App -->
+          <div class="option">
+            <div class="ico">🤖</div>
+            <h3 data-i18n="and_title"></h3>
+            <p data-i18n="and_desc"></p>
+            <ol class="ministeps">
+              <li data-i18n-html="and_s1"></li>
+              <li data-i18n="and_s2"></li>
+              <li data-i18n="and_s3"></li>
+            </ol>
+            <a class="btn sm secondary" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk" data-i18n="and_cta"></a>
           </div>
         </div>
         <div class="hint" data-i18n-html="hint"></div>
@@ -250,11 +287,12 @@
     const I18N = {
       de: {
         _title: "merkio – Gemeinsame Einkaufs- & To-do-Listen",
-        _desc: "merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Kostenlose Android-App.",
+        _desc: "merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Als Web-App im Browser oder kostenlose Android-App.",
         hero_h1: 'Gemeinsame Listen,<br><span class="accent">in Echtzeit geteilt</span>',
-        lead: "Einkaufs- und To-do-Listen für Familie, WG und Gruppen. Jede Änderung erscheint sofort bei allen – ganz ohne Chaos.",
-        btn_download: "App herunterladen (Android)",
-        btn_note: "Kostenlos · Android 7.0 oder neuer · APK-Direktdownload",
+        lead: "Einkaufs- und To-do-Listen für Familie, WG und Gruppen. Jede Änderung erscheint sofort bei allen – im Browser oder als Android-App.",
+        btn_web: "Web-App öffnen",
+        btn_android: "Android-App (APK)",
+        btn_note: "Kostenlos · Web-App ohne Installation · Android 7.0 oder neuer als APK",
         features_title: "Was merkio kann",
         f1_title: "Echtzeit-Sync",
         f1_desc: "Hakt jemand einen Artikel ab, sehen es alle sofort – ohne Aktualisieren.",
@@ -272,24 +310,31 @@
         f7_desc: "Notizlisten mit frei formatierbarem Text – fett, kursiv und unterstrichen.",
         f8_title: "Mehrsprachig",
         f8_desc: "Komplett auf Deutsch, Englisch und Französisch – inkl. passender Supermärkte je Land.",
-        install_title: "So installierst du merkio",
-        step1_title: "APK herunterladen",
-        step1_desc: 'Tippe oben auf „App herunterladen“. Die Datei <code>merkio.apk</code> wird gespeichert.',
-        step2_title: "Installation aus unbekannter Quelle erlauben",
-        step2_desc: "Android fragt beim Öffnen der APK nach. Erlaube die Installation für deinen Browser bzw. die Dateien-App.",
-        step3_title: "Öffnen und loslegen",
-        step3_desc: "Konto anlegen, Gruppe erstellen oder beitreten – fertig.",
-        hint: "<strong>Hinweis:</strong> merkio wird als Direkt-Download außerhalb des Play Stores angeboten. Die App stammt direkt vom Entwickler. Bei Updates lädst du einfach die neue Version von dieser Seite.",
+        usage_title: "So nutzt du merkio",
+        web_title: "Web-App (im Browser)",
+        web_desc: "Sofort einsatzbereit auf Handy, Tablet und PC – ganz ohne Installation. Auch für iPhone und iPad.",
+        web_s1: 'Öffne <code>app.merkio.de</code> in deinem Browser.',
+        web_s2: "Konto anlegen, dann Gruppe erstellen oder per Code beitreten.",
+        web_s3: "Optional über das Browser-Menü „Zum Startbildschirm hinzufügen“ – dann startet merkio wie eine echte App.",
+        web_cta: "Web-App öffnen",
+        and_title: "Android-App",
+        and_desc: "Native App als Direkt-Download – mit Push-Benachrichtigungen.",
+        and_s1: 'Tippe auf „Android-App (APK)“ – die Datei <code>merkio.apk</code> wird gespeichert.',
+        and_s2: "Beim Öffnen die Installation aus unbekannter Quelle erlauben, wenn Android fragt.",
+        and_s3: "App öffnen, Konto anlegen, Gruppe erstellen oder beitreten – fertig.",
+        and_cta: "APK herunterladen",
+        hint: "<strong>Hinweis:</strong> Beide Varianten nutzen dasselbe Konto und dieselben Listen – du kannst frei zwischen Web-App und Android-App wechseln. Die Android-App wird als Direkt-Download außerhalb des Play Stores angeboten und stammt direkt vom Entwickler.",
         footer_by: "© <span id=\"year\"></span> merkio · Eine App von Arnulf Christa",
         footer_contact: "Kontakt",
       },
       en: {
         _title: "merkio – Shared shopping & to-do lists",
-        _desc: "merkio – share shopping and to-do lists in real time with family and groups. Free Android app.",
+        _desc: "merkio – share shopping and to-do lists in real time with family and groups. As a web app in the browser or a free Android app.",
         hero_h1: 'Shared lists,<br><span class="accent">in real time</span>',
-        lead: "Shopping and to-do lists for family, flatmates and groups. Every change appears instantly for everyone – no chaos.",
-        btn_download: "Download app (Android)",
-        btn_note: "Free · Android 7.0 or newer · direct APK download",
+        lead: "Shopping and to-do lists for family, flatmates and groups. Every change appears instantly for everyone – in the browser or as an Android app.",
+        btn_web: "Open web app",
+        btn_android: "Android app (APK)",
+        btn_note: "Free · web app with no install · Android 7.0 or newer as APK",
         features_title: "What merkio can do",
         f1_title: "Real-time sync",
         f1_desc: "When someone checks off an item, everyone sees it instantly – no refresh needed.",
@@ -307,24 +352,31 @@
         f7_desc: "Notes lists with freely formatted text – bold, italic and underline.",
         f8_title: "Multilingual",
         f8_desc: "Fully available in German, English and French – including the right supermarkets per country.",
-        install_title: "How to install merkio",
-        step1_title: "Download the APK",
-        step1_desc: 'Tap “Download app” above. The file <code>merkio.apk</code> will be saved.',
-        step2_title: "Allow installation from unknown sources",
-        step2_desc: "Android will ask when you open the APK. Allow installation for your browser or files app.",
-        step3_title: "Open and get started",
-        step3_desc: "Create an account, create or join a group – done.",
-        hint: "<strong>Note:</strong> merkio is offered as a direct download outside the Play Store. The app comes straight from the developer. For updates, simply download the new version from this page.",
+        usage_title: "How to use merkio",
+        web_title: "Web app (in the browser)",
+        web_desc: "Ready to use right away on phone, tablet and PC – no installation. Works on iPhone and iPad too.",
+        web_s1: 'Open <code>app.merkio.de</code> in your browser.',
+        web_s2: "Create an account, then create a group or join with a code.",
+        web_s3: "Optionally choose “Add to Home Screen” in the browser menu – merkio then launches like a real app.",
+        web_cta: "Open web app",
+        and_title: "Android app",
+        and_desc: "Native app as a direct download – with push notifications.",
+        and_s1: 'Tap “Android app (APK)” – the file <code>merkio.apk</code> will be saved.',
+        and_s2: "When opening it, allow installation from unknown sources if Android asks.",
+        and_s3: "Open the app, create an account, create or join a group – done.",
+        and_cta: "Download APK",
+        hint: "<strong>Note:</strong> both versions use the same account and the same lists – switch freely between the web app and the Android app. The Android app is offered as a direct download outside the Play Store and comes straight from the developer.",
         footer_by: "© <span id=\"year\"></span> merkio · An app by Arnulf Christa",
         footer_contact: "Contact",
       },
       fr: {
         _title: "merkio – Listes de courses & tâches partagées",
-        _desc: "merkio – partagez vos listes de courses et de tâches en temps réel avec la famille et les groupes. Application Android gratuite.",
+        _desc: "merkio – partagez vos listes de courses et de tâches en temps réel avec la famille et les groupes. En appli web dans le navigateur ou en application Android gratuite.",
         hero_h1: 'Des listes partagées,<br><span class="accent">en temps réel</span>',
-        lead: "Listes de courses et de tâches pour la famille, la coloc et les groupes. Chaque modification apparaît aussitôt pour tout le monde – sans chaos.",
-        btn_download: "Télécharger l’application (Android)",
-        btn_note: "Gratuit · Android 7.0 ou plus récent · téléchargement direct de l’APK",
+        lead: "Listes de courses et de tâches pour la famille, la coloc et les groupes. Chaque modification apparaît aussitôt pour tout le monde – dans le navigateur ou en application Android.",
+        btn_web: "Ouvrir l’appli web",
+        btn_android: "Application Android (APK)",
+        btn_note: "Gratuit · appli web sans installation · Android 7.0 ou plus récent en APK",
         features_title: "Ce que merkio sait faire",
         f1_title: "Synchro en temps réel",
         f1_desc: "Quand quelqu’un coche un article, tout le monde le voit aussitôt – sans rafraîchir.",
@@ -342,14 +394,20 @@
         f7_desc: "Listes de notes avec texte librement formaté – gras, italique et souligné.",
         f8_title: "Multilingue",
         f8_desc: "Entièrement en allemand, anglais et français – avec les supermarchés adaptés à chaque pays.",
-        install_title: "Comment installer merkio",
-        step1_title: "Télécharger l’APK",
-        step1_desc: 'Touchez « Télécharger l’application » ci-dessus. Le fichier <code>merkio.apk</code> sera enregistré.',
-        step2_title: "Autoriser l’installation de sources inconnues",
-        step2_desc: "Android vous le demande à l’ouverture de l’APK. Autorisez l’installation pour votre navigateur ou l’application Fichiers.",
-        step3_title: "Ouvrir et c’est parti",
-        step3_desc: "Créez un compte, créez ou rejoignez un groupe – terminé.",
-        hint: "<strong>Remarque :</strong> merkio est proposé en téléchargement direct, hors Play Store. L’application provient directement du développeur. Pour les mises à jour, téléchargez simplement la nouvelle version depuis cette page.",
+        usage_title: "Comment utiliser merkio",
+        web_title: "Appli web (dans le navigateur)",
+        web_desc: "Prête à l’emploi immédiatement sur mobile, tablette et PC – sans installation. Fonctionne aussi sur iPhone et iPad.",
+        web_s1: 'Ouvrez <code>app.merkio.de</code> dans votre navigateur.',
+        web_s2: "Créez un compte, puis créez un groupe ou rejoignez-en un avec un code.",
+        web_s3: "En option, choisissez « Ajouter à l’écran d’accueil » dans le menu du navigateur – merkio se lance alors comme une vraie application.",
+        web_cta: "Ouvrir l’appli web",
+        and_title: "Application Android",
+        and_desc: "Application native en téléchargement direct – avec notifications push.",
+        and_s1: 'Touchez « Application Android (APK) » – le fichier <code>merkio.apk</code> sera enregistré.',
+        and_s2: "À l’ouverture, autorisez l’installation de sources inconnues si Android le demande.",
+        and_s3: "Ouvrez l’application, créez un compte, créez ou rejoignez un groupe – terminé.",
+        and_cta: "Télécharger l’APK",
+        hint: "<strong>Remarque :</strong> les deux versions utilisent le même compte et les mêmes listes – passez librement de l’appli web à l’application Android. L’application Android est proposée en téléchargement direct, hors Play Store, et provient directement du développeur.",
         footer_by: "© <span id=\"year\"></span> merkio · Une application d’Arnulf Christa",
         footer_contact: "Contact",
       },
