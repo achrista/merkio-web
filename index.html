@@ -61,7 +61,11 @@
     .hero h1 .accent { color: var(--blue); }
     .hero p.lead {
       font-size: clamp(17px, 2.5vw, 20px); color: var(--muted);
-      max-width: 540px; margin: 0 auto 36px;
+      max-width: 620px; margin: 0 auto 36px;
+    }
+    .hero p.lead .lead-hook {
+      display: block; color: var(--ink); font-weight: 800;
+      font-size: 1.15em; margin-bottom: 10px;
     }
 
     .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
@@ -172,7 +176,7 @@
     <section class="hero">
       <div class="wrap">
         <h1 data-i18n-html="hero_h1"></h1>
-        <p class="lead" data-i18n="lead"></p>
+        <p class="lead" data-i18n-html="lead"></p>
         <div class="btn-row">
           <a class="btn" href="https://app.merkio.de">
             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,6 +240,11 @@
             <h3 data-i18n="f6_title"></h3>
             <p data-i18n="f6_desc"></p>
           </div>
+          <div class="feature">
+            <div class="ico">🎁</div>
+            <h3 data-i18n="f9_title"></h3>
+            <p data-i18n="f9_desc"></p>
+          </div>
         </div>
       </div>
     </section>
@@ -279,6 +288,8 @@
       <p data-i18n-html="footer_by"></p>
       <p style="margin-top:6px;">
         <a href="mailto:mail@christa-web.de" data-i18n="footer_contact"></a>
+        &nbsp;·&nbsp; <a href="impressum.html" data-i18n="footer_imprint"></a>
+        &nbsp;·&nbsp; <a href="datenschutz.html" data-i18n="footer_privacy"></a>
       </p>
     </div>
   </footer>
@@ -289,7 +300,7 @@
         _title: "merkio – Gemeinsame Einkaufs- & To-do-Listen",
         _desc: "merkio – teile Einkaufs- und To-do-Listen in Echtzeit mit Familie und Gruppen. Als Web-App im Browser oder kostenlose Android-App.",
         hero_h1: 'Gemeinsame Listen,<br><span class="accent">in Echtzeit geteilt</span>',
-        lead: "Einkaufs- und To-do-Listen für Familie, WG und Gruppen. Jede Änderung erscheint sofort bei allen – im Browser oder als Android-App.",
+        lead: '<strong class="lead-hook">Nie wieder etwas vergessen.</strong> Mit merkio organisierst du Einkäufe, Aufgaben und gemeinsame Projekte – in der Familie, der WG, im Verein oder einfach für dich selbst. Teile Listen mit anderen, verteile Aufgaben und behalte jederzeit den Überblick. So wird nichts mehr vergessen, nichts doppelt gekauft und das nächste Grillfest läuft entspannt.',
         btn_web: "Web-App öffnen",
         btn_android: "Android-App (APK)",
         btn_note: "Kostenlos · Web-App ohne Installation · Android 7.0 oder neuer als APK",
@@ -310,6 +321,8 @@
         f7_desc: "Notizlisten mit frei formatierbarem Text – fett, kursiv und unterstrichen.",
         f8_title: "Mehrsprachig",
         f8_desc: "Komplett auf Deutsch, Englisch und Französisch – inkl. passender Supermärkte je Land.",
+        f9_title: "Kostenlos",
+        f9_desc: "merkio ist komplett kostenlos – ohne Werbung, ohne versteckte Kosten und ohne Abo. Einfach loslegen.",
         usage_title: "So nutzt du merkio",
         web_title: "Web-App (im Browser)",
         web_desc: "Sofort einsatzbereit auf Handy, Tablet und PC – ganz ohne Installation. Auch für iPhone und iPad.",
@@ -326,12 +339,14 @@
         hint: "<strong>Hinweis:</strong> Beide Varianten nutzen dasselbe Konto und dieselben Listen – du kannst frei zwischen Web-App und Android-App wechseln. Die Android-App wird als Direkt-Download außerhalb des Play Stores angeboten und stammt direkt vom Entwickler.",
         footer_by: "© <span id=\"year\"></span> merkio · Eine App von Arnulf Christa",
         footer_contact: "Kontakt",
+        footer_imprint: "Impressum",
+        footer_privacy: "Datenschutz",
       },
       en: {
         _title: "merkio – Shared shopping & to-do lists",
         _desc: "merkio – share shopping and to-do lists in real time with family and groups. As a web app in the browser or a free Android app.",
         hero_h1: 'Shared lists,<br><span class="accent">in real time</span>',
-        lead: "Shopping and to-do lists for family, flatmates and groups. Every change appears instantly for everyone – in the browser or as an Android app.",
+        lead: '<strong class="lead-hook">Never forget anything again.</strong> With merkio you organise your shopping, tasks and shared projects – for your family, your flat-share, your club or just for yourself. Share lists with others, divide up tasks and always keep track. That way nothing gets forgotten, nothing is bought twice, and the next barbecue stays relaxed.',
         btn_web: "Open web app",
         btn_android: "Android app (APK)",
         btn_note: "Free · web app with no install · Android 7.0 or newer as APK",
@@ -352,6 +367,8 @@
         f7_desc: "Notes lists with freely formatted text – bold, italic and underline.",
         f8_title: "Multilingual",
         f8_desc: "Fully available in German, English and French – including the right supermarkets per country.",
+        f9_title: "Free",
+        f9_desc: "merkio is completely free – no ads, no hidden costs and no subscription. Just get started.",
         usage_title: "How to use merkio",
         web_title: "Web app (in the browser)",
         web_desc: "Ready to use right away on phone, tablet and PC – no installation. Works on iPhone and iPad too.",
@@ -368,12 +385,14 @@
         hint: "<strong>Note:</strong> both versions use the same account and the same lists – switch freely between the web app and the Android app. The Android app is offered as a direct download outside the Play Store and comes straight from the developer.",
         footer_by: "© <span id=\"year\"></span> merkio · An app by Arnulf Christa",
         footer_contact: "Contact",
+        footer_imprint: "Imprint",
+        footer_privacy: "Privacy Policy",
       },
       fr: {
         _title: "merkio – Listes de courses & tâches partagées",
         _desc: "merkio – partagez vos listes de courses et de tâches en temps réel avec la famille et les groupes. En appli web dans le navigateur ou en application Android gratuite.",
         hero_h1: 'Des listes partagées,<br><span class="accent">en temps réel</span>',
-        lead: "Listes de courses et de tâches pour la famille, la coloc et les groupes. Chaque modification apparaît aussitôt pour tout le monde – dans le navigateur ou en application Android.",
+        lead: '<strong class="lead-hook">Ne plus jamais rien oublier.</strong> Avec merkio, vous organisez vos courses, vos tâches et vos projets communs – en famille, en colocation, dans une association ou simplement pour vous-même. Partagez vos listes, répartissez les tâches et gardez toujours une vue d’ensemble. Ainsi, plus rien n’est oublié, plus rien n’est acheté en double et le prochain barbecue se déroule en toute tranquillité.',
         btn_web: "Ouvrir l’appli web",
         btn_android: "Application Android (APK)",
         btn_note: "Gratuit · appli web sans installation · Android 7.0 ou plus récent en APK",
@@ -394,6 +413,8 @@
         f7_desc: "Listes de notes avec texte librement formaté – gras, italique et souligné.",
         f8_title: "Multilingue",
         f8_desc: "Entièrement en allemand, anglais et français – avec les supermarchés adaptés à chaque pays.",
+        f9_title: "Gratuit",
+        f9_desc: "merkio est entièrement gratuit – sans publicité, sans coûts cachés et sans abonnement. Lancez-vous, tout simplement.",
         usage_title: "Comment utiliser merkio",
         web_title: "Appli web (dans le navigateur)",
         web_desc: "Prête à l’emploi immédiatement sur mobile, tablette et PC – sans installation. Fonctionne aussi sur iPhone et iPad.",
@@ -410,6 +431,8 @@
         hint: "<strong>Remarque :</strong> les deux versions utilisent le même compte et les mêmes listes – passez librement de l’appli web à l’application Android. L’application Android est proposée en téléchargement direct, hors Play Store, et provient directement du développeur.",
         footer_by: "© <span id=\"year\"></span> merkio · Une application d’Arnulf Christa",
         footer_contact: "Contact",
+        footer_imprint: "Mentions légales",
+        footer_privacy: "Confidentialité",
       },
     };
 
