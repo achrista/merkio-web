@@ -1,0 +1,5 @@
+# merkio.de – alle Crawler willkommen, inkl. KI-Bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended)
+User-agent: *
+Allow: /
+
+Sitemap: https://merkio.de/sitemap.xml

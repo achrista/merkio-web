@@ -1,0 +1,32 @@
+# merkio
+
+> Kostenlose App für gemeinsame Einkaufslisten, To-do-Listen und Notizen – in Echtzeit geteilt. Für Familie, WG, Verein oder dich selbst. / Free app for shared shopping lists, to-do lists and notes – shared in real time, for family, flat-shares, clubs or yourself.
+
+## Über / About
+merkio ist eine kostenlose, mehrsprachige (Deutsch, Englisch, Französisch) App, mit der mehrere Personen gemeinsame Listen in Echtzeit nutzen: Einkaufslisten, To-do-Listen und Notizen. Änderungen erscheinen sofort bei allen Gruppenmitgliedern (Live-Sync). Nutzbar als Web-App im Browser (auch iPhone/iPad, ohne Installation) und als kostenlose Android-App. Kein Abo, keine Werbung.
+
+merkio is a free, multilingual (German, English, French) app for using shared lists in real time: shopping lists, to-do lists and notes. Changes appear instantly for all group members. Available as a web app in the browser (iPhone/iPad too, no install) and as a free Android app. No subscription, no ads.
+
+## Funktionen / Features
+- Echtzeit-Synchronisation in Gruppen / Real-time sync across groups
+- Einkaufslisten, To-do-Listen (Prioritäten A/B/C, Fälligkeit, Zuständigkeit), Notizlisten / Shopping, to-do (priorities, due dates, assignees) and notes lists
+- Rezept-Import: Zutaten automatisch auf die Einkaufsliste / Recipe import: ingredients added automatically
+- Artikel nach Markt/Geschäft sortieren / Sort items by store
+- Gruppen per Einladungscode oder Link / Groups via invite code or link
+- Push-Benachrichtigungen (Android) / Push notifications (Android)
+- Kostenlos, ohne Werbung, ohne Abo / Free, no ads, no subscription
+
+## Plattformen / Platforms
+- Web-App: https://app.merkio.de
+- Android-App (APK): https://merkio.de
+- Sprachen / Languages: Deutsch, English, Français
+
+## Links
+- Startseite / Home (DE): https://merkio.de/
+- English: https://merkio.de/en/
+- Français: https://merkio.de/fr/
+- Impressum: https://merkio.de/impressum.html
+- Datenschutz / Privacy: https://merkio.de/datenschutz.html
+
+## Anbieter / Provider
+Christa Consult, Arnulf Christa, Augsburg, Deutschland · Kontakt: mail@christa-web.de

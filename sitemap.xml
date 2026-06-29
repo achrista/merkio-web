@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://merkio.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://merkio.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://merkio.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://merkio.de/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merkio.de/"/>
+  </url>
+  <url>
+    <loc>https://merkio.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://merkio.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://merkio.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://merkio.de/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merkio.de/"/>
+  </url>
+  <url>
+    <loc>https://merkio.de/fr/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://merkio.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://merkio.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://merkio.de/fr/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://merkio.de/"/>
+  </url>
+  <url><loc>https://merkio.de/impressum.html</loc></url>
+  <url><loc>https://merkio.de/datenschutz.html</loc></url>
+</urlset>
