@@ -27,7 +27,8 @@ const C = {
     lead: '<strong class="lead-hook">Nie wieder etwas vergessen.</strong> Mit merkio organisierst du Einkäufe, Aufgaben und gemeinsame Projekte – in der Familie, der WG, im Verein oder einfach für dich selbst. Teile Listen mit anderen, verteile Aufgaben und behalte jederzeit den Überblick. So wird nichts mehr vergessen, nichts doppelt gekauft und das nächste Grillfest läuft entspannt.',
     btnWeb: 'Web-App öffnen',
     btnAndroid: 'Android-App (APK)',
-    btnNote: 'Kostenlos · Web-App ohne Installation · Android 7.0 oder neuer als APK',
+    btnNoteWeb: 'Kostenlos · ohne Installation · auch für iPhone & iPad',
+    btnNoteAndroid: 'Kostenlos · Android 7.0 oder neuer (APK)',
     featuresTitle: 'Was merkio kann',
     features: [
       { icon: '⚡', title: 'Echtzeit-Sync', desc: 'Hakt jemand einen Artikel ab, sehen es alle sofort – ohne Aktualisieren.' },
@@ -77,7 +78,8 @@ const C = {
     lead: '<strong class="lead-hook">Never forget anything again.</strong> With merkio you organise your shopping, tasks and shared projects – for your family, your flat-share, your club or just for yourself. Share lists with others, divide up tasks and always keep track. That way nothing gets forgotten, nothing is bought twice, and the next barbecue stays relaxed.',
     btnWeb: 'Open web app',
     btnAndroid: 'Android app (APK)',
-    btnNote: 'Free · web app with no install · Android 7.0 or newer as APK',
+    btnNoteWeb: 'Free · no install · works on iPhone & iPad too',
+    btnNoteAndroid: 'Free · Android 7.0 or newer (APK)',
     featuresTitle: 'What merkio can do',
     features: [
       { icon: '⚡', title: 'Real-time sync', desc: 'When someone checks off an item, everyone sees it instantly – no refresh needed.' },
@@ -127,7 +129,8 @@ const C = {
     lead: '<strong class="lead-hook">Ne plus jamais rien oublier.</strong> Avec merkio, vous organisez vos courses, vos tâches et vos projets communs – en famille, en colocation, dans une association ou simplement pour vous-même. Partagez vos listes, répartissez les tâches et gardez toujours une vue d’ensemble. Ainsi, plus rien n’est oublié, plus rien n’est acheté en double et le prochain barbecue se déroule en toute tranquillité.',
     btnWeb: 'Ouvrir l’appli web',
     btnAndroid: 'Application Android (APK)',
-    btnNote: 'Gratuit · appli web sans installation · Android 7.0 ou plus récent en APK',
+    btnNoteWeb: 'Gratuit · sans installation · aussi pour iPhone & iPad',
+    btnNoteAndroid: 'Gratuit · Android 7.0 ou plus récent (APK)',
     featuresTitle: 'Ce que merkio sait faire',
     features: [
       { icon: '⚡', title: 'Synchro en temps réel', desc: 'Quand quelqu’un coche un article, tout le monde le voit aussitôt – sans rafraîchir.' },
@@ -336,7 +339,8 @@ ${jsonLd(c, l)}
       font-size: 1.15em; margin-bottom: 10px;
     }
 
-    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-row { display: flex; gap: 18px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
+    .btn-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--blue); color: #fff; text-decoration: none;
@@ -354,7 +358,7 @@ ${jsonLd(c, l)}
     }
     .btn.secondary:hover { background: #eaf2fc; }
     .btn.sm { font-size: 15px; padding: 12px 22px; }
-    .btn-note { display: block; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .btn-note { display: block; margin-top: 0; font-size: 14px; color: var(--muted); text-align: center; max-width: 260px; }
 
     section.block { padding: 56px 0; }
     section.block h2 {
@@ -449,16 +453,21 @@ ${jsonLd(c, l)}
         <h1>${c.heroH1}</h1>
         <p class="lead">${c.lead}</p>
         <div class="btn-row">
-          <a class="btn" href="${APP}">
-            ${WEB_ICON}
-            <span>${c.btnWeb}</span>
-          </a>
-          <a class="btn secondary" href="${APK}">
-            ${DL_ICON}
-            <span>${c.btnAndroid}</span>
-          </a>
+          <div class="btn-col">
+            <a class="btn" href="${APP}">
+              ${WEB_ICON}
+              <span>${c.btnWeb}</span>
+            </a>
+            <span class="btn-note">${c.btnNoteWeb}</span>
+          </div>
+          <div class="btn-col">
+            <a class="btn secondary" href="${APK}">
+              ${DL_ICON}
+              <span>${c.btnAndroid}</span>
+            </a>
+            <span class="btn-note">${c.btnNoteAndroid}</span>
+          </div>
         </div>
-        <span class="btn-note">${c.btnNote}</span>
       </div>
     </section>
 

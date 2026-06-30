@@ -86,7 +86,8 @@
       font-size: 1.15em; margin-bottom: 10px;
     }
 
-    .btn-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-row { display: flex; gap: 18px; justify-content: center; align-items: flex-start; flex-wrap: wrap; }
+    .btn-col { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .btn {
       display: inline-flex; align-items: center; gap: 10px;
       background: var(--blue); color: #fff; text-decoration: none;
@@ -104,7 +105,7 @@
     }
     .btn.secondary:hover { background: #eaf2fc; }
     .btn.sm { font-size: 15px; padding: 12px 22px; }
-    .btn-note { display: block; margin-top: 16px; font-size: 14px; color: var(--muted); }
+    .btn-note { display: block; margin-top: 0; font-size: 14px; color: var(--muted); text-align: center; max-width: 260px; }
 
     section.block { padding: 56px 0; }
     section.block h2 {
@@ -201,16 +202,21 @@
         <h1>Shared lists,<br><span class="accent">in real time</span></h1>
         <p class="lead"><strong class="lead-hook">Never forget anything again.</strong> With merkio you organise your shopping, tasks and shared projects – for your family, your flat-share, your club or just for yourself. Share lists with others, divide up tasks and always keep track. That way nothing gets forgotten, nothing is bought twice, and the next barbecue stays relaxed.</p>
         <div class="btn-row">
-          <a class="btn" href="https://app.merkio.de">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            <span>Open web app</span>
-          </a>
-          <a class="btn secondary" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk">
-            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span>Android app (APK)</span>
-          </a>
+          <div class="btn-col">
+            <a class="btn" href="https://app.merkio.de">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M3 12h18M12 3c2.6 2.7 2.6 15.3 0 18M12 3c-2.6 2.7-2.6 15.3 0 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>Open web app</span>
+            </a>
+            <span class="btn-note">Free · no install · works on iPhone & iPad too</span>
+          </div>
+          <div class="btn-col">
+            <a class="btn secondary" href="https://github.com/achrista/merkio-web/releases/latest/download/merkio.apk">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Android app (APK)</span>
+            </a>
+            <span class="btn-note">Free · Android 7.0 or newer (APK)</span>
+          </div>
         </div>
-        <span class="btn-note">Free · web app with no install · Android 7.0 or newer as APK</span>
       </div>
     </section>
 
