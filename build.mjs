@@ -47,6 +47,9 @@ const C = {
       title: 'Web-App (im Browser)',
       desc: 'Sofort einsatzbereit auf Handy, Tablet und PC – ganz ohne Installation. Auch für iPhone und iPad.',
       steps: ['Öffne <code>app.merkio.de</code> in deinem Browser.', 'Konto anlegen, dann Gruppe erstellen oder per Code beitreten.', 'Optional über das Browser-Menü „Zum Startbildschirm hinzufügen“ – dann startet merkio wie eine echte App.'],
+      installTitle: '📲 Als App auf dem Startbildschirm installieren',
+      installIphone: '<strong>iPhone/iPad:</strong> <code>app.merkio.de</code> in <strong>Safari</strong> öffnen → Teilen-Symbol <span aria-hidden="true">⎋</span> (Quadrat mit Pfeil nach oben) antippen → „<strong>Zum Home-Bildschirm</strong>“ wählen → „Hinzufügen“. merkio erscheint dann mit eigenem Symbol wie eine normale App.',
+      installAndroidBrowser: '<strong>Android (Browser):</strong> In Chrome das Menü <span aria-hidden="true">⋮</span> öffnen → „<strong>App installieren</strong>“ bzw. „Zum Startbildschirm hinzufügen“.',
       cta: 'Web-App öffnen',
     },
     android: {
@@ -69,6 +72,7 @@ const C = {
     footerContact: 'Kontakt',
     footerImprint: 'Impressum',
     footerPrivacy: 'Datenschutz',
+    footerLicenses: 'Lizenzen',
     langAria: 'Sprache',
     skipToApp: 'Zur Web-App',
   },
@@ -99,6 +103,9 @@ const C = {
       title: 'Web app (in the browser)',
       desc: 'Ready to use right away on phone, tablet and PC – no installation. Works on iPhone and iPad too.',
       steps: ['Open <code>app.merkio.de</code> in your browser.', 'Create an account, then create a group or join with a code.', 'Optionally choose “Add to Home Screen” in the browser menu – merkio then launches like a real app.'],
+      installTitle: '📲 Install as an app on your home screen',
+      installIphone: '<strong>iPhone/iPad:</strong> Open <code>app.merkio.de</code> in <strong>Safari</strong> → tap the share icon <span aria-hidden="true">⎋</span> (square with an arrow pointing up) → choose “<strong>Add to Home Screen</strong>” → “Add”. merkio then appears with its own icon like a regular app.',
+      installAndroidBrowser: '<strong>Android (browser):</strong> In Chrome open the menu <span aria-hidden="true">⋮</span> → “<strong>Install app</strong>” or “Add to Home screen”.',
       cta: 'Open web app',
     },
     android: {
@@ -121,6 +128,7 @@ const C = {
     footerContact: 'Contact',
     footerImprint: 'Imprint',
     footerPrivacy: 'Privacy Policy',
+    footerLicenses: 'Licenses',
     langAria: 'Language',
     skipToApp: 'Go to web app',
   },
@@ -151,6 +159,9 @@ const C = {
       title: 'Appli web (dans le navigateur)',
       desc: 'Prête à l’emploi immédiatement sur mobile, tablette et PC – sans installation. Fonctionne aussi sur iPhone et iPad.',
       steps: ['Ouvrez <code>app.merkio.de</code> dans votre navigateur.', 'Créez un compte, puis créez un groupe ou rejoignez-en un avec un code.', 'En option, choisissez « Ajouter à l’écran d’accueil » dans le menu du navigateur – merkio se lance alors comme une vraie application.'],
+      installTitle: '📲 Installer comme application sur l’écran d’accueil',
+      installIphone: '<strong>iPhone/iPad :</strong> Ouvrez <code>app.merkio.de</code> dans <strong>Safari</strong> → touchez l’icône de partage <span aria-hidden="true">⎋</span> (carré avec flèche vers le haut) → choisissez « <strong>Sur l’écran d’accueil</strong> » → « Ajouter ». merkio apparaît alors avec sa propre icône, comme une vraie application.',
+      installAndroidBrowser: '<strong>Android (navigateur) :</strong> Dans Chrome, ouvrez le menu <span aria-hidden="true">⋮</span> → « <strong>Installer l’application</strong> » ou « Ajouter à l’écran d’accueil ».',
       cta: 'Ouvrir l’appli web',
     },
     android: {
@@ -173,6 +184,7 @@ const C = {
     footerContact: 'Contact',
     footerImprint: 'Mentions légales',
     footerPrivacy: 'Confidentialité',
+    footerLicenses: 'Licences',
     langAria: 'Langue',
     skipToApp: 'Vers l’appli web',
   },
@@ -203,7 +215,7 @@ function jsonLd(c, l) {
     inLanguage: l,
     description: c.desc,
     image: SITE + '/og-image.png',
-    softwareVersion: '1.0.11',
+    softwareVersion: '1.0.12',
     featureList: c.features.map((f) => f.title),
     author: { '@type': 'Organization', name: 'Christa Consult', url: SITE },
   }
@@ -418,6 +430,16 @@ ${jsonLd(c, l)}
       font-size: 14px; color: #6b5800;
     }
 
+    .install-box {
+      margin: 4px 0 16px; padding: 12px 14px;
+      background: #eef5ff; border: 1px solid #c9defa; border-radius: 10px;
+      font-size: 13.5px; color: var(--ink); text-align: left;
+    }
+    .install-box h4 { font-size: 14px; margin-bottom: 6px; }
+    .install-box p { margin: 4px 0; color: var(--muted); }
+    .install-box p strong { color: var(--ink); }
+    .install-box code { background: #dfeafc; padding: 1px 6px; border-radius: 5px; font-size: 12.5px; }
+
     /* FAQ */
     .faq { max-width: 760px; margin: 0 auto; display: grid; gap: 14px; }
     .faq-item {
@@ -494,6 +516,11 @@ ${featuresHtml(c)}
             <ol class="ministeps">
 ${stepsHtml(c.web.steps)}
             </ol>
+            <div class="install-box">
+              <h4>${c.web.installTitle}</h4>
+              <p>${c.web.installIphone}</p>
+              <p>${c.web.installAndroidBrowser}</p>
+            </div>
             <a class="btn sm" href="${APP}">${c.web.cta}</a>
           </div>
           <div class="option">
@@ -527,6 +554,7 @@ ${faqHtml(c)}
         <a href="mailto:mail@christa-web.de">${c.footerContact}</a>
         &nbsp;·&nbsp; <a href="/impressum.html">${c.footerImprint}</a>
         &nbsp;·&nbsp; <a href="/datenschutz.html">${c.footerPrivacy}</a>
+        &nbsp;·&nbsp; <a href="/lizenzen.html">${c.footerLicenses}</a>
       </p>
     </div>
   </footer>
