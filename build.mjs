@@ -215,7 +215,7 @@ function jsonLd(c, l) {
     inLanguage: l,
     description: c.desc,
     image: SITE + '/og-image.png',
-    softwareVersion: '1.0.12',
+    softwareVersion: '1.0.13',
     featureList: c.features.map((f) => f.title),
     author: { '@type': 'Organization', name: 'Christa Consult', url: SITE },
   }
