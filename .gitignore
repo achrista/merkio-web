@@ -1,0 +1,2 @@
+# APKs werden als Release-Asset veroeffentlicht, nicht im Repo (siehe README)
+*.apk
