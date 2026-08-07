@@ -115,7 +115,7 @@
           <h2>5. Geteilte Inhalte in Gruppen</h2>
           <p>merkio ist auf gemeinsame Nutzung ausgelegt. Inhalte einer Gruppe (Listen, Einträge, Notizen) sind für alle Mitglieder dieser Gruppe sichtbar. Beim Einladen bzw. in der Mitgliederverwaltung kann dein Anzeigename und ggf. deine E-Mail-Adresse für andere Mitglieder sichtbar sein.</p>
 
-          <h2>6. Speicherdauer und Löschung</h2>
+          <h2 id="konto-loeschen">6. Speicherdauer und Löschung</h2>
           <p>Wir speichern deine Daten, solange dein Konto besteht. Du kannst dein Konto jederzeit selbst löschen – in der App bzw. Web-App unter „Einstellungen → Konto löschen". Alternativ genügt eine formlose E-Mail an <a href="mailto:mail@christa-web.de">mail@christa-web.de</a>. Mit der Löschung des Kontos werden deine personenbezogenen Daten entfernt, soweit keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
 
           <h2>7. Deine Rechte</h2>
@@ -181,7 +181,7 @@
           <h2>5. Shared content in groups</h2>
           <p>merkio is designed for sharing. Content of a group (lists, entries, notes) is visible to all members of that group. When inviting members or in member management, your display name and, where applicable, your email address may be visible to other members.</p>
 
-          <h2>6. Retention and deletion</h2>
+          <h2 id="konto-loeschen">6. Retention and deletion</h2>
           <p>We store your data for as long as your account exists. You can delete your account at any time yourself – in the app or web app under "Settings → Delete account". Alternatively, an informal email to <a href="mailto:mail@christa-web.de">mail@christa-web.de</a> is sufficient. When your account is deleted, your personal data is removed unless statutory retention obligations apply.</p>
 
           <h2>7. Your rights</h2>
@@ -247,7 +247,7 @@
           <h2>5. Contenus partagés dans les groupes</h2>
           <p>merkio est conçu pour le partage. Le contenu d’un groupe (listes, entrées, notes) est visible par tous les membres de ce groupe. Lors de l’invitation de membres ou dans la gestion des membres, votre nom d’affichage et, le cas échéant, votre adresse e-mail peuvent être visibles par les autres membres.</p>
 
-          <h2>6. Durée de conservation et suppression</h2>
+          <h2 id="konto-loeschen">6. Durée de conservation et suppression</h2>
           <p>Nous conservons vos données tant que votre compte existe. Vous pouvez supprimer votre compte à tout moment vous-même – dans l’appli ou l’appli web sous « Paramètres → Supprimer le compte ». Un simple e-mail à <a href="mailto:mail@christa-web.de">mail@christa-web.de</a> suffit également. Lors de la suppression du compte, vos données personnelles sont effacées, sauf obligation légale de conservation.</p>
 
           <h2>7. Vos droits</h2>
@@ -278,6 +278,13 @@
         b.classList.toggle('active', b.getAttribute('data-lang') === lang);
       });
       try { localStorage.setItem('merkio_lang', lang); } catch (_) {}
+      // Der Inhalt wird erst per JS eingesetzt - beim Aufruf mit Anker (z.B.
+      // /datenschutz.html#konto-loeschen, im Play Store als Lösch-Adresse
+      // hinterlegt) gab es das Ziel beim Laden noch nicht. Also selbst springen.
+      if (location.hash) {
+        const target = document.getElementById(location.hash.slice(1));
+        if (target) target.scrollIntoView();
+      }
     }
     function detectLang() {
       try { const s = localStorage.getItem('merkio_lang'); if (s && I18N[s]) return s; } catch (_) {}
