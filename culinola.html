@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Culinola – der Infobildschirm fürs Zuhause</title>
+  <meta name="description" content="Culinola ist eine Software zum Selbstbetrieb, die Haustechnik, Termine, Erinnerungen, Nachrichten und mehr auf einem Bildschirm zu Hause zeigt." />
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0a6a8f" />
+  <style>
+    :root { --accent:#0a6a8f; --ink:#14202b; --muted:#4f5d6a; --bg:#e7ebef; --card:#fff; --line:#d3dae1; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; -webkit-font-smoothing:antialiased; }
+    .wrap { max-width:820px; margin:0 auto; padding:0 20px; }
+    header { padding:28px 0 8px; }
+    .name { font-size:34px; font-weight:300; letter-spacing:.02em; color:var(--ink); text-decoration:none; }
+    main { padding:16px 0 60px; }
+    .card { background:var(--card); border-radius:10px; padding:28px; margin-bottom:16px; }
+    .card h1 { font-size:28px; line-height:1.25; margin-bottom:10px; }
+    .card h2 { font-size:19px; margin:4px 0 8px; }
+    .card p { margin-bottom:10px; }
+    .card ul { margin:0 0 12px 20px; }
+    .card li { margin-bottom:6px; }
+    .card a { color:var(--accent); }
+    .lead { font-size:18px; color:var(--muted); }
+    footer { text-align:center; padding:28px 0; color:var(--muted); font-size:14px; border-top:1px solid var(--line); }
+    footer a { color:var(--accent); text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap"><a class="name" href="culinola.html">Culinola</a></div>
+  </header>
+
+  <main>
+    <div class="wrap">
+      <section class="card">
+        <h1>Der Infobildschirm fürs Zuhause</h1>
+        <p class="lead">Culinola zeigt auf einem Bildschirm in der Küche oder im Flur, was im Haus gerade wichtig ist – und läuft dabei vollständig auf den eigenen Geräten.</p>
+        <p>Culinola ist eine Software zum Selbstbetrieb. Sie wird auf einem eigenen Rechner im Heimnetz installiert und im Browser eines Bildschirms angezeigt. Es gibt keinen Dienst im Internet, bei dem man sich anmeldet, und kein Konto beim Hersteller.</p>
+      </section>
+
+      <section class="card">
+        <h2>Was Culinola zeigt</h2>
+        <ul>
+          <li>Messwerte und Schalter der Haustechnik, Verläufe als Diagramm</li>
+          <li>Kamerabilder, Radio und Fernsehen</li>
+          <li>Wetter mit Vorhersage</li>
+          <li>Termine aus dem Kalender und Erinnerungen an Geburtstage und andere Tage</li>
+          <li>Nachrichten, E-Mails und Rezepte</li>
+          <li>Uhr mit Eieruhr</li>
+        </ul>
+        <p>Jeder Bereich ist ein eigener Baustein. Welche man nutzt und wie sie angeordnet sind, legt jede Installation selbst fest.</p>
+      </section>
+
+      <section class="card">
+        <h2>Anmeldung bei Google</h2>
+        <p>Wer Termine und Erinnerungen aus einem Google-Konto sehen möchte, verbindet seine Installation mit diesem Konto. Culinola bittet dabei um <strong>Lesezugriff</strong> auf den Kalender und auf die Kontakte:</p>
+        <ul>
+          <li><strong>Kalender:</strong> um die Termine der nächsten Tage zu zeigen.</li>
+          <li><strong>Kontakte:</strong> um an Geburtstage und andere wiederkehrende Tage zu erinnern und beim Antippen einer Erinnerung die Telefonnummer zu zeigen.</li>
+        </ul>
+        <p>Die gelesenen Daten bleiben auf dem eigenen Rechner. Sie werden weder an den Hersteller noch an Dritte übertragen. Näheres steht in der <a href="culinola-datenschutz.html">Datenschutzerklärung</a>.</p>
+      </section>
+
+      <section class="card">
+        <h2>Stand</h2>
+        <p>Culinola ist in Entwicklung. Der Quelltext wird unter der Lizenz Apache 2.0 veröffentlicht.</p>
+        <p>Kontakt: <a href="mailto:mail@christa-web.de">mail@christa-web.de</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><a href="culinola-datenschutz.html">Datenschutzerklärung</a> · <a href="impressum.html">Impressum</a></p>
+    </div>
+  </footer>
+</body>
+</html>
