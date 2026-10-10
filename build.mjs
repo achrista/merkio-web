@@ -22,7 +22,7 @@ const OG_LOCALE = { de: 'de_DE', en: 'en_US', fr: 'fr_FR' }
 const C = {
   de: {
     title: 'merkio – Gemeinsame Einkaufs- & To-do-Listen in Echtzeit teilen',
-    desc: 'merkio – teile Einkaufslisten, To-do-Listen und Notizen in Echtzeit mit Familie, WG oder Verein. Kostenlos als Web-App im Browser (auch iPhone) oder als Android-App.',
+    desc: 'merkio – teile Einkaufslisten, To-do-Listen, Notizen und Rezepte in Echtzeit mit Familie, WG oder Verein. Kostenlos als Web-App im Browser (auch iPhone) oder als Android-App.',
     heroH1: 'Gemeinsame Listen,<br><span class="accent">in Echtzeit geteilt</span>',
     lead: '<strong class="lead-hook">Nie wieder etwas vergessen.</strong> Mit merkio organisierst du Einkäufe, Aufgaben und gemeinsame Projekte – in der Familie, der WG, im Verein oder einfach für dich selbst. Teile Listen mit anderen, verteile Aufgaben und behalte jederzeit den Überblick. So wird nichts mehr vergessen, nichts doppelt gekauft und das nächste Grillfest läuft entspannt.',
     btnWeb: 'Web-App öffnen',
@@ -36,7 +36,7 @@ const C = {
       { icon: '🍝', title: 'Rezepte', desc: 'Sammle Rezepte aus Links (Chefkoch, Instagram …), PDFs, Scans oder Fotos – sortiert nach Kategorie. Portionen wählen, und die Zutaten landen in der passenden Menge auf der Einkaufsliste.' },
       { icon: '🏪', title: 'Nach Markt sortiert', desc: 'Ordne Artikel Geschäften zu oder gruppiere nach Kategorien – deren Reihenfolge du per Ziehen an deinen Supermarkt anpasst.' },
       { icon: '✅', title: 'To-do-Listen', desc: 'Aufgaben mit Prioritäten (A/B/C), Fälligkeit und Zuständigkeit – fällige werden farblich hervorgehoben.' },
-      { icon: '📝', title: 'Notizen', desc: 'Notizlisten mit frei formatierbarem Text – fett, kursiv, unterstrichen, Aufzählungen und Textfarben.' },
+      { icon: '📝', title: 'Notizen', desc: 'Notizlisten mit frei formatierbarem Text – fett, kursiv, unterstrichen, Aufzählungen und Textfarben. Mit Rückgängig-Taste und Kategorien, nach denen du deine Notizen gruppierst.' },
       { icon: '📴', title: 'Offline-fähig', desc: 'Kein Empfang im Supermarkt? Die Android-App funktioniert auch offline – Änderungen werden automatisch synchronisiert, sobald du wieder online bist.' },
       { icon: '🌍', title: 'Mehrsprachig', desc: 'Komplett auf Deutsch, Englisch und Französisch – inkl. passender Supermärkte je Land.' },
       { icon: '🔔', title: 'Benachrichtigungen', desc: 'Push-Hinweise, wenn sich auf deinen Listen etwas tut.' },
@@ -78,7 +78,7 @@ const C = {
   },
   en: {
     title: 'merkio – Share shopping & to-do lists in real time',
-    desc: 'merkio – share shopping lists, to-do lists and notes in real time with family, flatmates or your club. Free as a web app in the browser (iPhone too) or as an Android app.',
+    desc: 'merkio – share shopping lists, to-do lists, notes and recipes in real time with family, flatmates or your club. Free as a web app in the browser (iPhone too) or as an Android app.',
     heroH1: 'Shared lists,<br><span class="accent">in real time</span>',
     lead: '<strong class="lead-hook">Never forget anything again.</strong> With merkio you organise your shopping, tasks and shared projects – for your family, your flat-share, your club or just for yourself. Share lists with others, divide up tasks and always keep track. That way nothing gets forgotten, nothing is bought twice, and the next barbecue stays relaxed.',
     btnWeb: 'Open web app',
@@ -92,7 +92,7 @@ const C = {
       { icon: '🍝', title: 'Recipes', desc: 'Collect recipes from links (recipe sites, Instagram …), PDFs, scans or photos – sorted by category. Choose the servings and the ingredients land on your shopping list in the right amounts.' },
       { icon: '🏪', title: 'Sorted by store', desc: 'Assign items to stores or group by category – and drag the categories into the order of your supermarket.' },
       { icon: '✅', title: 'To-do lists', desc: 'Tasks with priorities (A/B/C), due dates and assignees – due items are colour-highlighted.' },
-      { icon: '📝', title: 'Notes', desc: 'Notes lists with freely formatted text – bold, italic, underline, bullet lists and text colours.' },
+      { icon: '📝', title: 'Notes', desc: 'Notes lists with freely formatted text – bold, italic, underline, bullet lists and text colours. With an undo button and categories to group your notes by.' },
       { icon: '📴', title: 'Works offline', desc: 'No signal in the store? The Android app works offline too – changes sync automatically once you are back online.' },
       { icon: '🌍', title: 'Multilingual', desc: 'Fully available in German, English and French – including the right supermarkets per country.' },
       { icon: '🔔', title: 'Notifications', desc: 'Push alerts when something changes on your lists.' },
@@ -134,7 +134,7 @@ const C = {
   },
   fr: {
     title: 'merkio – Listes de courses & tâches partagées en temps réel',
-    desc: 'merkio – partagez listes de courses, listes de tâches et notes en temps réel avec la famille, la coloc ou l’association. Gratuit en appli web (iPhone aussi) ou en application Android.',
+    desc: 'merkio – partagez listes de courses, listes de tâches, notes et recettes en temps réel avec la famille, la coloc ou l’association. Gratuit en appli web (iPhone aussi) ou en application Android.',
     heroH1: 'Des listes partagées,<br><span class="accent">en temps réel</span>',
     lead: '<strong class="lead-hook">Ne plus jamais rien oublier.</strong> Avec merkio, vous organisez vos courses, vos tâches et vos projets communs – en famille, en colocation, dans une association ou simplement pour vous-même. Partagez vos listes, répartissez les tâches et gardez toujours une vue d’ensemble. Ainsi, plus rien n’est oublié, plus rien n’est acheté en double et le prochain barbecue se déroule en toute tranquillité.',
     btnWeb: 'Ouvrir l’appli web',
@@ -148,7 +148,7 @@ const C = {
       { icon: '🍝', title: 'Recettes', desc: 'Rassemblez des recettes à partir de liens (sites de cuisine, Instagram …), de PDF, de scans ou de photos – classées par catégorie. Choisissez les portions et les ingrédients arrivent sur la liste de courses dans les bonnes quantités.' },
       { icon: '🏪', title: 'Trié par magasin', desc: 'Associez les articles aux magasins ou groupez par catégorie – et glissez les catégories dans l’ordre de votre supermarché.' },
       { icon: '✅', title: 'Listes de tâches', desc: 'Tâches avec priorités (A/B/C), échéance et responsable – les échéances sont mises en couleur.' },
-      { icon: '📝', title: 'Notes', desc: 'Listes de notes avec texte librement formaté – gras, italique, souligné, listes à puces et couleurs de texte.' },
+      { icon: '📝', title: 'Notes', desc: 'Listes de notes avec texte librement formaté – gras, italique, souligné, listes à puces et couleurs de texte. Avec un bouton Annuler et des catégories pour regrouper vos notes.' },
       { icon: '📴', title: 'Fonctionne hors ligne', desc: 'Pas de réseau au supermarché ? L’appli Android fonctionne aussi hors ligne – les modifications se synchronisent automatiquement dès le retour en ligne.' },
       { icon: '🌍', title: 'Multilingue', desc: 'Entièrement en allemand, anglais et français – avec les supermarchés adaptés à chaque pays.' },
       { icon: '🔔', title: 'Notifications', desc: 'Alertes push lorsqu’il se passe quelque chose sur vos listes.' },
@@ -215,7 +215,7 @@ function jsonLd(c, l) {
     inLanguage: l,
     description: c.desc,
     image: SITE + '/og-image.png',
-    softwareVersion: '1.0.16',
+    softwareVersion: '1.0.17',
     featureList: c.features.map((f) => f.title),
     author: { '@type': 'Organization', name: 'Christa Consult', url: SITE },
   }
