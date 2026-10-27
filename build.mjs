@@ -456,6 +456,7 @@ ${jsonLd(c, l)}
     footer a { color: var(--blue); text-decoration: none; }
     footer a:hover { text-decoration: underline; }
   </style>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "82c1f51bcc9e4f228c35b2dca4b441af"}'></script>
 </head>
 <body>
 
